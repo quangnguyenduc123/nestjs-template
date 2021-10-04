@@ -1,0 +1,49 @@
+type Query {
+    """ 
+    This is a graphql comment 
+    """
+    users: [User]
+    """ 
+    This is a graphql comment 
+    """
+    user(id: Int!): User
+}
+""" 
+This is a graphql comment 
+"""
+input UserCreateInput {
+    email: String!
+    password: String!
+    username: String!
+    name: String!
+}
+
+""" 
+This is a graphql comment 
+"""
+input UserUpdateInput {
+    """ This is a graphql comment """
+    id: Int!
+    email: String
+    password: String
+    username: String
+    name: String
+}
+
+type Mutation {
+    createUser(user: UserCreateInput!): User
+    updateUser(user: UserUpdateInput!): User
+    deleteUser(id: Int!): User
+}
+
+""" 
+This is a graphql comment 
+"""
+type User {
+    id: Int!
+    name: String
+    email: String
+    username: String
+    password: String
+    posts: [Post!]
+}
