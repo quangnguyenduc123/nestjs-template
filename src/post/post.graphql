@@ -1,0 +1,16 @@
+input PostCreateInput {
+    title: String!
+    authorId: Int!
+}
+
+type Mutation {
+    createPost(post: PostCreateInput!): Post
+}
+
+
+type Post {
+    id: Int!
+    title: String
+    published: Boolean
+    authorId: Int!
+}
